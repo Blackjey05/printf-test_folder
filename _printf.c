@@ -5,9 +5,10 @@
 int _printf(const char *format, ...)
 {
 	int char_count = 0;
+
 	va_list args;
+
 	va_start(args, format);
-	
 	while (*format)
 	{
 		if (*format == '%')
@@ -17,7 +18,7 @@ int _printf(const char *format, ...)
 				break;
 			switch (*format)
 			{
-				case 'd' :{
+				case 'd':{
 					  	int value = va_arg(args, int);
 						print_integer(value);
 						char_count +=
@@ -41,5 +42,5 @@ int _printf(const char *format, ...)
 
 	va_end(args);
 
-	return char_count;
+	return (char_count);
 }
